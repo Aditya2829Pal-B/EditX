@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Photo Enhancer",
+  "description": "An application that uses Gemini to enhance blurry or low-quality photos, making them sharp, clear, and visually appealing. Upload a photo and see the transformation.",
+  "requestFramePermissions": []
+}
