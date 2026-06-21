@@ -2,8 +2,8 @@
 import React, { useState, useCallback } from 'react';
 import { Header } from './components/Header';
 import { ImageUploader } from './components/ImageUploader';
-import { ImageDisplay } from './components/ImageDisplay';
 import { Spinner } from './components/Spinner';
+import { ComparisonView } from './components/ComparisonView';
 import { enhanceImageWithGemini } from './services/geminiService';
 import { fileToBase64 } from './utils/fileUtils';
 
@@ -86,10 +86,7 @@ const App: React.FC = () => {
         {isLoading && <Spinner />}
         
         {!isLoading && (originalImage || enhancedImage) && (
-          <div className="w-full max-w-6xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
-            {originalImage && <ImageDisplay title="Original" src={originalImage} />}
-            {enhancedImage && <ImageDisplay title="Enhanced" src={enhancedImage} isEnhanced={true} />}
-          </div>
+          <ComparisonView originalSrc={originalImage} enhancedSrc={enhancedImage} />
         )}
       </main>
       <footer className="text-center p-4 text-gray-500 text-sm">
